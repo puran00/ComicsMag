@@ -1,8 +1,7 @@
-@extends('layout.app')
-@section('title')
+<?php $__env->startSection('title'); ?>
     Главная страница
-@endsection
-@section('main')
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('main'); ?>
     <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active" data-bs-interval="10000" style="background-size: cover; height: 90vh;">
@@ -36,4 +35,6 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\OSPanel\domains\ComicsMag\resources\views/welcome.blade.php ENDPATH**/ ?>
