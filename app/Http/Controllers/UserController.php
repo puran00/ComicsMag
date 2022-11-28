@@ -14,7 +14,7 @@ class UserController extends Controller
             'surname'=>['required','regex:/[А-Яа-яЁё]/u'],
             'patronymic'=>['regex:/[А-Яа-яЁё]/u','nullable'],
             'email'=>['required','email:frc','unique:users'],
-            'login'=>['required','regex:/[А-Яа-яЁёA-aZ-z0-9]/u/-'],
+            'login'=>['required','regex:/[А-Яа-яЁёA-aZ-z0-9-]/u/'],
             'password'=>['required','min:6','max:12','confirmed'],
             'rules'=>['required'],
         ],[
@@ -31,6 +31,7 @@ class UserController extends Controller
         $user->email=$request->email;
         $user->login=$request->login;
         $user->password=md5($request->password);
+
         $user->save();
 
         return redirect()->route('AuthPage');
